@@ -47,8 +47,86 @@ def Normalization(server) :
     return(server - 100000)
 
 def FunctionCaller(fn, arg) : # 함수를 부르는 함수 만들기
-    return(fn(arg)) #이런게 가능하다니
+    return(fn(arg)) # 이런게 가능하다니
 
 reboot = 140000
+normalizationNum = reboot-FunctionCaller(Normalization, reboot)
 
-print (reboot, "에서", reboot-FunctionCaller(Normalization, reboot), "떠나간, 그 발걸음이 너무도 무겁네~", sep=' ')
+print (reboot, "에서", normalizationNum, "떠나간, 그 발걸음이 너무도 무겁네~", sep=' ')
+
+# 여기까지가 4월 15일 분량
+
+isThisReal = True # Boolean형 변수
+print (isThisReal)
+
+print (reboot > normalizationNum, '140000' == reboot)
+
+def RealCheck(num1, num2) :
+    if (num2 > num1 - num2 and num2 > 0) : # && → and, || → or
+        return '역시 정상화는 신창섭'
+    else :
+        return '과징금 크악'
+
+def MultiCheck (num1, num2) :
+    if (num2 > num1 - num2 or num2 > 0 and num1 < 0) : # and와 or의 연산순서 체크
+        return '드디어 대창섭이 메이플을 정상화하네' # and를 먼저 연산하고 그 다음에 or을 연산함
+    else :
+        return '바로 리부트 정상화'
+
+print (RealCheck(reboot, normalizationNum), MultiCheck(reboot, normalizationNum))
+
+mevenPow = 50000000 
+
+def ElifTest (num1) :
+    if (num1 >= 500000000) :
+        return '하지만'
+    elif (num1 >= 250000000) : # else if는 줄여서 elif로 쓴다
+        return '여길봐도'
+    elif (num1 >= 100000000) :
+        return '저길봐도'
+    elif (num1 >= 50000000) :
+        return '오천플마단밖에 없네'
+    else :
+        return '인장주작은 뭐야'
+
+print (ElifTest(mevenPow))
+
+servers = ['스카니아', '리부트', '노바']
+print (servers[0], servers[1], servers[2], servers[-1], servers[-2]) #index값을 음수로 먹일 수 있다. 그 경우에는 index 값만큼 역순으로 센 값이 나온다.
+print (servers[1:2], servers[:3], servers[-1:3], servers[0:-1])
+
+servers[1] = '에오스'
+print (servers[:3], len(servers)) #len = 리스트 길이를 반환하는 함수
+print (sorted(servers)) # sorted = 배열을 알파벳순으로 재정렬
+
+ages = [22, 27, 35, 99]
+print (sum(ages), max(ages)) # 둘다 기본함수임
+
+servers.append('엘리시움') # 리스트 맨 마지막 자리에 내용물 추가
+print(servers.pop()) # 리스트 맨 마지막에 있는 내용물을 제거 및 리턴
+print(servers.index('스카니아'))
+servers.append('헬리오스')
+
+def IsRebootAlive() :
+    if (not '리부트' in servers) :
+        print ("1명을 죽이면 살인자, 100명을 죽이면 학살자, ")
+    if ('에오스' in servers and '헬리오스' in servers) :
+        print ("10000명을 죽이면 정복자, 10만을 죽이면 신창섭")
+
+IsRebootAlive()
+
+testTuples = '정상화', '정상화', '정상화'
+print (testTuples)
+
+testNum = 0.25
+testTuples2 = testNum.as_integer_ratio() # 소수를 분자, 분모로 나누는 함수
+print (testTuples2)
+numerator, denominator = testTuples2 # 이런게 가능하다니
+print (numerator, denominator, numerator / denominator)
+
+numerator, denominator = denominator, numerator # 두 변수값 바꾸기를 한줄로 처리하는 방법
+print (numerator, denominator, numerator / denominator)
+
+numerator, denominator = testTuples[0], testTuples[1]
+print (numerator, denominator)
+# 여기까지가 4월 16일 분량
