@@ -114,6 +114,7 @@ def IsRebootAlive() :
         print ("10000명을 죽이면 정복자, 10만을 죽이면 신창섭")
 
 IsRebootAlive()
+print (servers)
 
 testTuples = '정상화', '정상화', '정상화'
 print (testTuples)
@@ -130,3 +131,21 @@ print (numerator, denominator, numerator / denominator)
 numerator, denominator = testTuples[0], testTuples[1]
 print (numerator, denominator)
 # 여기까지가 4월 16일 분량
+
+for server in servers:
+    print(server)
+
+for i in range(8):
+    print(i)
+
+plusTwo = [n+2 for n in range(22)]
+print(plusTwo, sep=' ')
+
+servers = ['스카니아', '리부트', '노바']
+funServers = [server for server in servers if server == '리부트']
+print(funServers, sep=' ')
+
+normServers = ['정상화' for server in servers]
+print(normServers, sep=' ')
+
+# 여기까지가 4월 21일 분량
