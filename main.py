@@ -149,3 +149,50 @@ normServers = ['정상화' for server in servers]
 print(normServers, sep=' ')
 
 # 여기까지가 4월 21일 분량
+
+print('\"리부트 서버\"는\n 그저 본보기였을 뿐 /\\') # string에서 특수기호 사용하기
+lyric = "더는참지않겠다"
+print ([char+'!' for char in lyric])
+
+sampleText = 'Memento Mori'
+print (sampleText.upper() + sampleText.lower())
+print (lyric.index('참'))
+print (sampleText.startswith('Memento'))
+print (sampleText.endswith('oMori'))
+
+sampleWords = sampleText.split()
+print (sampleWords)
+print ('❗️'.join([char for char in lyric]))
+
+dateStr = '2024-01-08'
+year, month, day = dateStr.split('-') # -를 기점으로 3등분하기
+print('/'.join([month, day, year]))
+
+trueHero = '아이언맨'
+amount = 3000
+print (trueHero + ', ' + str(amount) + '만큼 사랑해') # 문자가 아닌 값을 문자열에 합하려면 문자열로 바꿔야 함
+print ('{}, {}만큼 사랑해'.format(trueHero, amount)) # 이렇게도 가능
+print ('{1}, {0}만큼 사랑해'.format(trueHero, amount)) # 중괄호 안에 인덱스값 먹여서 조정도 가능
+
+dictServers = {'스카니아':1, '리부트':2, '루나':3}
+print (dictServers['리부트'])
+dictServers['엘리시움'] = 4
+print (dictServers)
+
+serversToInitial = {server : server[0] for server in servers} # 문자열의 첫번째 자리를 dictionary의 인덱스값으로 설정
+print (serversToInitial)
+
+for i in dictServers:
+    print ("{}는 아마도 {}번째 서버".format(i,dictServers[i]))
+
+import math # 외부 라이브러리 불러오기
+print (format(type(math)))
+print ("파이를 소숫점 아래 10번째 자리까지 외워보자 = {:.11}".format(math.pi))
+print ("{}는 {}의 {}제곱이에요".format(32,2,int(math.log(32,2))))
+
+import math as mt # 외부 라이브러리에 별명붙여서 불러오기
+print (format(type(mt)))
+print ("파이를 소숫점 아래 10번째 자리까지 외워보자 = {:.11}".format(mt.pi))
+print ("{}는 {}의 {}제곱이에요".format(32,2,int(mt.log(32,2))))
+
+# 여기까지가 4월 22일 분량
