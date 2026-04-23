@@ -116,7 +116,7 @@ def IsRebootAlive() :
 IsRebootAlive()
 print (servers)
 
-testTuples = '정상화', '정상화', '정상화'
+testTuples = '정상화', '정상화', '정상화' #tuple : 인덱스를 지정해서 값을 바꾸기는 불가능
 print (testTuples)
 
 testNum = 0.25
@@ -125,7 +125,7 @@ print (testTuples2)
 numerator, denominator = testTuples2 # 이런게 가능하다니
 print (numerator, denominator, numerator / denominator)
 
-numerator, denominator = denominator, numerator # 두 변수값 바꾸기를 한줄로 처리하는 방법
+numerator, denominator = denominator, numerator # tuple을 이용해 두 변수값 바꾸기를 한줄로 처리할 수 있음
 print (numerator, denominator, numerator / denominator)
 
 numerator, denominator = testTuples[0], testTuples[1]
@@ -196,3 +196,36 @@ print ("파이를 소숫점 아래 10번째 자리까지 외워보자 = {:.11}".
 print ("{}는 {}의 {}제곱이에요".format(32,2,int(mt.log(32,2))))
 
 # 여기까지가 4월 22일 분량
+
+sampleList = [1, 2, 3, 4, 5]
+squareMap = map(lambda x: pow(x, 2), sampleList) # map 함수 : 왼쪽에는 함수, 오른쪽에는 iterable 자료형을 넣는다
+print (list(squareMap)) # 출력할때는 List형으로 바꿔야 출력할 수 있다
+
+sampleList2 = [2, 3, 4, 5, 6]
+sumMap = map(lambda x, y: x+y, sampleList, sampleList2)
+print (list(sumMap))
+
+oddMap = filter(lambda x: True if (x % 2 == 1) else False, sampleList) # 가독성 생각하면 lambda 안쓰는게 좋을지도?
+print (list(oddMap))
+
+def IsEven(num):
+    if num % 2 == 0:
+        return True
+    else:
+        return False
+
+evenMap = filter(IsEven, sampleList) # lambda 안 쓴 버전
+print (list(evenMap))
+
+sampleZip = zip(sampleList, sampleList2) # 작은 size를 가지는 list에 맞춰서 자료형을 묶어줌
+print (list(sampleZip))
+
+sampleDict = {}
+for sampleList, sampleList2 in zip(sampleList, sampleList2): # Zip을 활용한 Dictionary 만들기
+    sampleDict[sampleList] = sampleList2
+print (sampleDict)
+
+for indexNum, value in enumerate(servers, start=1): # iterable형 자료를 index 값을 포함한 객체로 만들기
+    print ("index: " + str(indexNum) + ", value: " + value)
+
+# 여기까지가 4월 23일 분량
